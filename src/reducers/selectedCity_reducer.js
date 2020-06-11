@@ -3,5 +3,10 @@ export default function(state, action) {
     return null;
   }
 
-  // handle action
+  switch (action.type) {
+    case 'SELECT_CITIES':
+      return action.payload;
+    default:
+      return state;
+  }
 }
