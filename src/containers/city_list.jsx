@@ -9,13 +9,10 @@ class CityList extends Component {
     return this.props.cities.map((city, index) => (
       <City
         name={city.name}
-        // imageUrl={city.imageUrl}
         address={city.address}
         slug={city.slug}
         key={city.slug}
-        // selectFlat={selectFlat}
         index={index}
-        // selected={city.name === selectedFlat.name}
       />
     ));
   }
