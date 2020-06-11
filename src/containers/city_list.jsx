@@ -44,4 +44,10 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(null, mapDispatchToProps)(CityList);
+function mapStateToProps(state) {
+  return {
+    cities: state.cities
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CityList);
