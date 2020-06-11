@@ -7,3 +7,10 @@ export function setCities() {
     payload: cities
   };
 }
+
+export function selectedCity(city) {
+  return {
+    type: 'SELECT_CITY',
+    payload: city
+  };
+}
