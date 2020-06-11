@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { setCities } from '../actions';
 import City from './city.jsx';
 
 class CityList extends Component {
@@ -30,4 +33,11 @@ class CityList extends Component {
   }
 }
 
-export default CityList;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { setCities: setCities },
+    dispatch
+  );
+}
+
+export default connect(null, mapDispatchToProps)(CityList);
