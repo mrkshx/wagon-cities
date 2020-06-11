@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { setCities } from '../actions';
 import City from './city.jsx';
 
 class CityList extends Component {
   renderList = () => {
-    const { cities,
-      // selectFlat,
-      // selectedFlat
-    } = this.props;
-    return cities.map((city, index) => (
+    return this.props.cities.map((city, index) => (
       <City
         name={city.name}
         // imageUrl={city.imageUrl}
@@ -21,6 +20,10 @@ class CityList extends Component {
     ));
   }
 
+  componentWillMount() {
+    this.props.setCities();
+  }
+
   render() {
     return (
       <div className="cities">
@@ -30,4 +33,17 @@ class CityList extends Component {
   }
 }
 
-export default CityList;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { setCities },
+    dispatch
+  );
+}
+
+function mapStateToProps(state) {
+  return {
+    cities: state.cities
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CityList);
