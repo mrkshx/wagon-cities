@@ -24,6 +24,10 @@ class CityList extends Component {
     ));
   }
 
+  componentWillMount() {
+    this.props.setCities();
+  }
+
   render() {
     return (
       <div className="cities">
