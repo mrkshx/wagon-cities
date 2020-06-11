@@ -6,11 +6,7 @@ import City from './city.jsx';
 
 class CityList extends Component {
   renderList = () => {
-    const { cities,
-      // selectFlat,
-      // selectedFlat
-    } = this.props;
-    return cities.map((city, index) => (
+    return this.props.cities.map((city, index) => (
       <City
         name={city.name}
         // imageUrl={city.imageUrl}
