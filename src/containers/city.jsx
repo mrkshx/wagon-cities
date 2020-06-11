@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 class City extends Component {
-  // handleClick = () => {
-  //   const { selectFlat, index } = this.props;
-  //   // selectFunction(event.target.id);
-  //   selectFlat(index);
-  // }
+  handleClick = () => {
+    // REDUX ACTION
+  }
 
   render() {
     const {
@@ -15,7 +13,7 @@ class City extends Component {
       return null;
     }
     return (
-      <div className="list-group-item">
+      <div className="list-group-item" onClick={this.handleClick}>
         <p>{name}</p>
       </div>
     );
