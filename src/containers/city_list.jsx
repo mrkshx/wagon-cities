@@ -6,13 +6,10 @@ import City from './city.jsx';
 
 class CityList extends Component {
   renderList = () => {
-    return this.props.cities.map((city, index) => (
+    return this.props.cities.map((city) => (
       <City
-        name={city.name}
-        address={city.address}
-        slug={city.slug}
+        city={city}
         key={city.slug}
-        index={index}
       />
     ));
   }
