@@ -10,14 +10,14 @@ class City extends Component {
 
   render() {
     const {
-      name,
+      city,
     } = this.props;
-    if (!name) {
+    if (!city.name) {
       return null;
     }
     return (
       <div className="list-group-item" onClick={this.handleClick}>
-        <p>{name}</p>
+        <p>{city.name}</p>
       </div>
     );
   }
