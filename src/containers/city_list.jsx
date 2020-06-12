@@ -5,15 +5,15 @@ import { setCities } from '../actions';
 import City from './city.jsx';
 
 class CityList extends Component {
+  componentWillMount() {
+    this.props.setCities();
+  }
+
   renderList = () => {
     return this.props.cities.map((city) => {
       return (<City city={city} key={city.slug} />
       );
     });
-  }
-
-  componentWillMount() {
-    this.props.setCities();
   }
 
   render() {
