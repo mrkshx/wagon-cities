@@ -5,23 +5,15 @@ import { setCities } from '../actions';
 import City from './city.jsx';
 
 class CityList extends Component {
-  renderList = () => {
-    return this.props.cities.map((city, index) => (
-      <City
-        name={city.name}
-        // imageUrl={city.imageUrl}
-        address={city.address}
-        slug={city.slug}
-        key={city.slug}
-        // selectFlat={selectFlat}
-        index={index}
-        // selected={city.name === selectedFlat.name}
-      />
-    ));
-  }
-
   componentWillMount() {
     this.props.setCities();
+  }
+
+  renderList = () => {
+    return this.props.cities.map((city) => {
+      return (<City city={city} key={city.slug} />
+      );
+    });
   }
 
   render() {
